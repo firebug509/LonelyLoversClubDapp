@@ -12,13 +12,13 @@ export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: var(--secondary);
+  background-color: var(--accent-new);
   padding: 40px;
   font-weight: bold;
   color: var(--secondary-text);
-  width: 150px;                                                       
+  width: 250px;                                                       
   cursor: pointer;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  box-shadow: 12px 42px 2px 1px rgba(0, 0, 255, 0.2);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   :active {
@@ -38,9 +38,9 @@ export const StyledRoundButton = styled.button`
   background-color: var(--primary);
   padding: 10px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 25px;
   color: var(--primary-text);
-  width: 30px;
+  width: 60px;
   height: 30px;
   cursor: pointer;
   display: flex;
@@ -72,9 +72,9 @@ export const ResponsiveWrapper = styled.div`
 //67 alignment of media row colum etc
 
 export const StyledLogo = styled.img`
-  width: 200px;
+  width: 400px;
   @media (min-width:300px) {
-    width: 250px;
+    width: 350px;
   }
   transition: width 0.5s;
   transition: height 0.5s;
@@ -82,16 +82,16 @@ export const StyledLogo = styled.img`
 //75 -77 logo adjustment settings
 
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px solid var(--accent);
+  box-shadow: 0px 35px 11px 2px rgba(0, 0, 0, 0.7);
+  border: 8px solid var(--accent);
   background-color: var(--accent);
   border-radius: 100%;
-  width: 200px;
+  width: 500px;
   @media (min-width: 900px) {
-    width: 250px;
+    width: 400px;
   }
   @media (min-width: 1000px) {
-    width: 250px;
+    width: 400px;
   }
   transition: width 0.5s;
 `;
@@ -133,7 +133,7 @@ function App() {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalGasLimit = String(gasLimit +((gasLimit* mintAmount)*.2));
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
@@ -208,13 +208,16 @@ function App() {
         flex={1}
         ai={"center"}      //change placement of the logo (right = top left of page)
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bgplain.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+          <StyledLogo alt={"logo"} src={"/config/images/logo2.png"} />
+ 
+     
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+          <s.SpacerLarge/><s.SpacerLarge/><s.SpacerLarge/>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+           
           </s.Container>
           <s.SpacerLarge />
           <s.Container
@@ -226,7 +229,7 @@ function App() {
               padding: 24,
               borderRadius: 24,
               border: "4px solid var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
+              boxShadow: "0px 25px 15px 2px rgba(0,0,0,0.7)",
             }}
           >
             <s.TextTitle
@@ -377,13 +380,16 @@ function App() {
               </>
             )}
             <s.SpacerMedium />
+            
           </s.Container>
-          <s.SpacerLarge />
+        
+          <s.SpacerLarge/>  <s.SpacerLarge/>  <s.SpacerLarge/>
+          <s.SpacerLarge/>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg
               alt={"example"}
               src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
+           
             />
           </s.Container>
         </ResponsiveWrapper>
@@ -415,7 +421,7 @@ function App() {
               //adjusted bottom text bar 2  
             }}
           >
-            - The Minting Process will cut off at 3000 Cannibals Sold - DO NOT MINT AFTER 3K MAY LOSE GAS
+            - Welcome to the CAVE -
           </s.TextDescription>
         </s.Container>
       </s.Container>
