@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0x5Fc82669103CBdd7f47Ea8bd9f87D0d82bA1F266",
-  "SCAN_LINK": "https://etherscan.io/address/0x5Fc82669103CBdd7f47Ea8bd9f87D0d82bA1F266",
+  "CONTRACT_ADDRESS": "0xE0De7d1946F0a1695eB07de6Df22c395af383275",
+  "SCAN_LINK": "https://etherscan.io/address/0xE0De7d1946F0a1695eB07de6Df22c395af383275",
   "NETWORK": {
     "NAME": "Ethereum",
     "SYMBOL": "ETH",
     "ID": 4
   },
-  "NFT_NAME": "Casual Cavemen",
-  "SYMBOL": "CAVE",
-  "MAX_SUPPLY": 111,
-  "WEI_COST": 90000000000000000,
-  "DISPLAY_COST": 0.09,
+  "NFT_NAME": "Lonely Lovers Club",
+  "SYMBOL": "LVRS",
+  "MAX_SUPPLY": 9500,
+  "WEI_COST": 0,
+  "DISPLAY_COST": 0.00,
   "GAS_LIMIT": 230000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/casual-cavemen",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/lonely-lovers-club",
   "SHOW_BACKGROUND": true
 }
