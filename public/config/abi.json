@@ -120,32 +120,6 @@
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "addressCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_newCount",
-				"type": "uint256"
-			}
-		],
-		"name": "addressCountReset",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -230,6 +204,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "capBackup",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "capCount",
 		"outputs": [
 			{
@@ -256,12 +243,12 @@
 	},
 	{
 		"inputs": [],
-		"name": "claimListActive",
+		"name": "capCountBackup",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "uint256",
 				"name": "",
-				"type": "bool"
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -358,19 +345,6 @@
 			}
 		],
 		"name": "mint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "numberOfTokens",
-				"type": "uint256"
-			}
-		],
-		"name": "mintClaimList",
 		"outputs": [],
 		"stateMutability": "payable",
 		"type": "function"
@@ -591,56 +565,12 @@
 	{
 		"inputs": [
 			{
-				"internalType": "bool",
-				"name": "_newCap",
-				"type": "bool"
-			}
-		],
-		"name": "setCap2Bool",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_newCap",
-				"type": "bool"
-			}
-		],
-		"name": "setCapBool",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "addressInput",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "numAllowedToMint",
+				"name": "_newCapBackup",
 				"type": "uint256"
 			}
 		],
-		"name": "setClaimList",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_claimListActive",
-				"type": "bool"
-			}
-		],
-		"name": "setClaimListActive",
+		"name": "setClaimableBackup",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -680,24 +610,6 @@
 			}
 		],
 		"name": "setCost",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address[]",
-				"name": "addresses",
-				"type": "address[]"
-			},
-			{
-				"internalType": "uint256",
-				"name": "numAllowedToMint",
-				"type": "uint256"
-			}
-		],
-		"name": "setFullClaimList",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
