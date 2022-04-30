@@ -16,7 +16,7 @@ export const StyledButton = styled.button`
   padding: 40px;
   font-weight: bold;
   color: var(--secondary-text);
-  width: 150px;                                                       
+  width: 250px;                                                       
   cursor: pointer;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -40,8 +40,8 @@ export const StyledRoundButton = styled.button`
   font-weight: bold;
   font-size: 15px;
   color: var(--primary-text);
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@ export const ResponsiveWrapper = styled.div`
   flex-direction: column;
   justify-content: stretched;
   align-items: stretched;
-  width: 100%;
+  width: 80%;
   @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -133,7 +133,7 @@ function App() {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalGasLimit = String(gasLimit +((gasLimit* mintAmount)*.2));
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
@@ -171,8 +171,8 @@ function App() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 10) {
-      newMintAmount = 10;
+    if (newMintAmount > 3) {
+      newMintAmount = 3;
     }
     setMintAmount(newMintAmount);
   };
@@ -207,15 +207,27 @@ function App() {
       <s.Container
         flex={1}
         ai={"center"}      //change placement of the logo (right = top left of page)
-        style={{ padding: 24, backgroundColor: "var(--primary)" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        style={{ padding: 100, backgroundColor: "var(--primary)" }}      //   <StyledImg alt={"example"} src={"/config/images/example.gif"} />     image code
+        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg1.png" : null} //  <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />      logo code
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+
+
+      
+
+          <s.Container flex={1} jc={"center"} ai={"end"}>
+        <s.SpacerLarge/>
+          <StyledImg alt={"example"} src={"/config/images/preview.gif"}style={{ transform: "scaleX(-1)" }} />
+          </s.Container>
+  
+        <s.SpacerLarge/>
+
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+          <s.Container flex={1} jc={"center"} ai={"top"}>
+
+          <img alt={"logo"} src={"/config/images/5.png"} width="100%"/> 
           </s.Container>
+         
           <s.SpacerLarge />
           <s.Container
             flex={2}
@@ -237,7 +249,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+              Spread the Love!
             </s.TextTitle>
             <s.TextDescription
               style={{
@@ -377,21 +389,22 @@ function App() {
               </>
             )}
             <s.SpacerMedium />
-          </s.Container>
+          </s.Container>        
           <s.SpacerLarge />
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg
-              alt={"example"}
-              src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
-            />
+          <s.Container flex={1} jc={"center"} ai={"center"}> 
+          
+          <s.Container flex={1} jc={"center"} ai={"start"}>
+        <s.SpacerLarge/>
+        <img alt={"logo"} src={"/config/images/4.png"} width="60%"/>
+          </s.Container>
+  
           </s.Container>
         </ResponsiveWrapper>
         <s.SpacerMedium />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
             style={{
-              textAlign: "center",
+              textAlign: "center",          //  reverse gif code     <StyledImg alt={"example"} src={"/config/images/example.gif"} style={{ transform: "scaleX(-1)" }} />
               color: "var(--primary-text)",
               boxShadow: "0px 5px 11px 2px rgba(0, 0, 0, 0.7)",
               border: "4px solid var(--primary)",
@@ -415,7 +428,7 @@ function App() {
               //adjusted bottom text bar 2  
             }}
           >
-            - The Minting Process will cut off at 3000 Cannibals Sold - DO NOT MINT AFTER 3K MAY LOSE GAS
+            - Onboarding people with the perfect FREE opertunity to get into NFTs -
           </s.TextDescription>
         </s.Container>
       </s.Container>
